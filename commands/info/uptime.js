@@ -1,4 +1,6 @@
 const Discord = require('discord.js');
+const randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); }); 
+
 let days = 0;
 let week = 0;
 
@@ -31,7 +33,7 @@ exports.run = (client, message, args) =>{
     uptime += `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
 
     let serverembed = new Discord.MessageEmbed()
-        .setColor("#228B22")
+        .setColor(randomColor)
         .addField('Uptime', uptime);
 
     message.channel.send(serverembed);
